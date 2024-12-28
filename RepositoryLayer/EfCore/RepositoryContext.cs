@@ -13,5 +13,10 @@ namespace RepositoryLayer.EfCore
         
         public RepositoryContext(DbContextOptions options):base(options) { }
         public DbSet<Book> Books { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.ApplyConfiguration(new BookConfig());
+        }
     }
 }
