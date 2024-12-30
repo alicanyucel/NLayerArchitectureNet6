@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NLayerWebApi.Extensions;
 using RepositoryLayer.EfCore;
 
 namespace NLayerWebApi
@@ -15,7 +16,7 @@ namespace NLayerWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+            builder.Services.ConfigureSqlContext(builder.Configuration);
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

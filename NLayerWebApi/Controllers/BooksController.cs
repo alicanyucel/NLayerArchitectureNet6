@@ -8,10 +8,11 @@ namespace NLayerWebApi.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly RepositoryContext _context;
-        public BooksController(RepositoryContext context)
+        private readonly RepositoryManager _repositoryManager;
+
+        public BooksController(RepositoryManager repositoryManager)
         {
-            _context = context;
+            _repositoryManager = repositoryManager;
         }
     }
 }
