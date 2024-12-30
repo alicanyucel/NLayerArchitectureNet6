@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RepositoryLayer.Constract;
 using RepositoryLayer.EfCore;
 
 namespace NLayerWebApi.Controllers
@@ -8,8 +9,7 @@ namespace NLayerWebApi.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly RepositoryManager _repositoryManager;
-
+        private readonly IRepositoryManager _repositoryManager;
         public BooksController(RepositoryManager repositoryManager)
         {
             _repositoryManager = repositoryManager;

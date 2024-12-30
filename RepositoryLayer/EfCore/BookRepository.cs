@@ -23,7 +23,7 @@ namespace RepositoryLayer.EfCore
         public IQueryable<Book> GetAllBooks(bool trackChanges)=>FindAll(trackChanges).OrderBy(b=>b.Id);
 
 
-        public IQueryable<Book> GetBookById(int Id, bool trackChanges) => (IQueryable<Book>)FindByCondition(b=>b.Id.Equals(Id), trackChanges);
+        public Book GetBookById(int Id, bool trackChanges) => (Book)FindByCondition(b => b.Id.Equals(Id), trackChanges);
         
 
         public void UpdateOneBook(Book book)=>Update(book);
